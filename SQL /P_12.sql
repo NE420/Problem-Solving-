@@ -49,8 +49,7 @@ Explanation:
 - Computer has 1 student, so we do not include it.
 */
 
-SELECT c1.class
-FROM Courses c1
-RIGHT JOIN Courses c2 ON c1.student = c2.student
-GROUP BY c1.class
-HAVING COUNT(DISTINCT(c2.student)) >= 5
+SELECT class
+FROM Courses 
+GROUP BY class
+HAVING COUNT(student) >= 5
